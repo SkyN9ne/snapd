@@ -119,7 +119,7 @@ jobs:
         git fetch origin ${{ github.base_ref }}:${{ github.base_ref }}
 
     - name: Download Debian dependencies
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4.1.7
       with:
         name: debian-dependencies
         path: ./debian-deps/
@@ -167,7 +167,7 @@ jobs:
 
     - name: Get changed files
       id: changed-files
-      uses: tj-actions/changed-files@v34.5.1
+      uses: tj-actions/changed-files@v41.0.0
       with:
         path: ./src/github.com/snapcore/snapd
 
@@ -236,7 +236,7 @@ jobs:
         git fetch origin ${{ github.base_ref }}:${{ github.base_ref }}
 
     - name: Download Debian dependencies
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4.1.7
       with:
         name: debian-dependencies
         path: ./debian-deps/
@@ -334,7 +334,7 @@ jobs:
       GITHUB_PULL_REQUEST: ${{ github.event.number }}
     steps:
     - name: Download the coverage files
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4.1.7
       with:
         name: coverage-files
         path: .coverage/
